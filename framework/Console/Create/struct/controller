@@ -1,0 +1,17 @@
+<?php
+
+use EF2\Core\Controller;
+use EF2\Http\Request;
+use EF2\Http\Response;
+
+class [name] extends Controller
+{
+
+    public function actionIndex()
+    {
+
+           //code
+
+    }
+
+}

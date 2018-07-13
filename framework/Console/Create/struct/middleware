@@ -1,0 +1,22 @@
+<?php
+
+use EF2\Http\Request;
+use EF2\Http\Response;
+use EF2\Core\Middleware;
+
+class [name] extends Middleware
+{
+
+	public function handle(Request $request)
+	{
+
+		return true;
+	}
+
+
+	public function terminate(Response $response)
+	{
+
+
+	}
+}
