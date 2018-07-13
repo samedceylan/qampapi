@@ -17,7 +17,27 @@ require_once dirname(__FILE__).'/vendor/autoload.php';
 $ef2=new Framework;
 $ef2->register();
 
+function options()
+{
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, PATCH, DELETE', true);
 
+    header('Access-Control-Allow-Headers: *', true);
+
+    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+        header("HTTP/1.1 200 OK", true);
+        die();
+    }
+
+    if (array_key_exists('HTTP_ACCESS_CONTROL_REQUEST_HEADERS', $_SERVER)) {
+        header('Access-Control-Allow-Headers: ' . $_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']);
+    } else {
+        header('Access-Control-Allow-Headers: *');
+    }
+}
+
+
+options();
 /* loader */
 
 
