@@ -14,6 +14,13 @@ class ClientController extends Controller
         if($request->header->token!="e9e4ed801f4fe9d06a15cb890b15e4fb")
             $result->response(-1,"token");
 
+        $validate = $request->validate([
+            ["clientId", "clientId", "required"]
+        ]);
+
+        if (count($validate->getErrors()) > 0) {
+            $result->response(-1, "error", $validate->getReadableErrors(true));
+        }
         $client=new Clients;
         $res=$client->add([
             "clientId"=>$request->post->clientId
