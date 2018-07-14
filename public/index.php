@@ -10,10 +10,10 @@ use EF2\Debug;
 use EF2\Db\Eloquent;
 
 /* framework include */
-$framework_path=dirname(__FILE__).'/framework';
-require_once $framework_path.'/Framework.php';
+$framework_path=dirname(__FILE__).'/../framework';
+require_once $framework_path . '/Framework.php';
 
-require_once dirname(__FILE__).'/vendor/autoload.php';
+require_once dirname(__FILE__) . '/../vendor/autoload.php';
 $ef2=new Framework;
 $ef2->register();
 
@@ -45,9 +45,9 @@ DI::bind("loader",function(){
 
     $loader=new Loader;
     $loader->setDir(array(
-        dirname(__FILE__)."/public/main/controller/",
-        dirname(__FILE__)."/public/main/model/",
-        dirname(__FILE__)."/public/main/components/",
+        dirname(__FILE__)."/main/controller/",
+        dirname(__FILE__)."/main/model/",
+        dirname(__FILE__)."/main/components/",
     ));
     $loader->register();
     return $loader;
@@ -87,7 +87,7 @@ DI::singleton("result",function(){
 })->resolveWhen("Result");
 
 DI::singleton("formvalidation",function(){
-    return new FormValidation("tr",dirname(__FILE__)."/public/language/gump");
+    return new FormValidation("tr",dirname(__FILE__)."/language/gump");
 })->resolveWhen("SValidation");
 
 DI::bind("debug", function () {
