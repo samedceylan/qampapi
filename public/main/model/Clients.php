@@ -29,7 +29,7 @@ class Clients extends Model
                     "result"=>2,
                     "second"=> $k
                ];
-            }else if($k>60*6*24*7 && $k<=60*60*24*14){
+            }else if($k>60*6*24*7 && $k<=60*60*24*30){
                 return [
                     "result"=>3,
                     "second"=> $k
